@@ -2,6 +2,13 @@ import winterfacev5cl
 import requests
 import discord
 from discord.ext import commands
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+
+
+scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
+creds = ServiceAccountCredentials.from_json_keyfile_name('FLOORS.json', scope)
+client_ = gspread.authorize(creds)
 
 image_url = None
 
@@ -74,7 +81,13 @@ async def satvik(ctx):
 @client.command()
 async def log(ctx,arg1,arg2):
     get_pic(arg1)
-    result = winterfacev5cl.retrieve('test.png') + " " + arg2
+    result = arg2 + " " + winterfacev5cl.retrieve('test.png')
+    row = result.split()
+    sheet = client_.open('FLOORS').sheet1
+    print('adding row to sheet')
+    sheet.append_row(row)
+    print('after adding row...')
+    
     await ctx.send(result)
 
 

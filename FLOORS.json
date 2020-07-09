@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "floors-282814",
+  "private_key_id": "a2d80bc81b19b9b0bf9cd8969bf47d15c56059d6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCpeoiBmi18QlAb\nngOwGOngQNY65zRTx6H0e8fFHGelNQsiIpUGZV/cPPH9ES/aNej7KAWCmlnYMxJv\nNB9bOMFutoAr3Piq/BEUe6OiyKSWl9K49N1yWa7/VhAxNiDMG9vJwIweYCg3HRym\nBWDC8Y7ILAMsiJcN7kvQBL9ugbxchzzyejrCw7yHin39TWDmcE/glgFWNb19wu+l\nProuwE29JsYcFLhVfT5NMchMG6fZcpShgacEqL1wr1zQFcDHeyTtL1Vwr/MXAf2H\nOrgX8j8V4hCgBxAMCBMRsjXcI1ZPk4jaTgXUag0dZAN/6foSSr4YjXAIPbG0bRQM\nyipXRebFAgMBAAECggEANuw5Sbrjy7WXzWNncY2ZWW3Zn0wnFpGHCDqG8ndylUT7\n3yuS3PhEWRS9HVSRC+fVoXMGWh1YSWq/qh8bnE3nzc/B+LULNyoqBNfOn2XjhNQd\n24erLjAnOKM06yXN+id7EkZegkeKMNYz3w+2HGb47SDqRGfdgAu+MOMhAJh1qQw5\nqVOo8wIDoQN4yNODBlNi1ygphLMhOuj4hwuv18UkN6V25cuMDKMCb1BSIK93gtnZ\nmTDUil0wO4Ir4YnfFagYAsh9u4wlL28CT7MJ4DLDK6l6L3txsLHiYrIXk9YvVkQX\nFsgFbK65JkH5mQW2LPyj3Q8Lpd3rqJyxeqKZ+Qbe7wKBgQDUf5q3rJKI/ks996Xn\n3ZvvX5ZKPXFtiJWwmyVtE+BYh5smscihMRgOekvMNqKQvurNKe9slyBYtERnlu/H\nXIoPmIx9ny9bCLYDBl3CxZw5IlKoTOzFBq3YyNgr5p9snStAu74lsiozLI/1glpJ\nKJHoXP3frs1FlrwyxUtvhCCkzwKBgQDMLGRVSwkY7vvu6nzlMwMeZstbvotDecs6\nLoEMNwzeoRv//1ixvTvler3OBu3hjUCE3VD8RW8Mt+enTm0HVtu6d1adsg5V05TZ\n/gqXnT3I+rGyHfyubNTgv+YxD80NSq5ed+CyxhFf70KHCFbpCDUuc13xW49MGe0M\n5bD5TZBIKwKBgFtJfjPNpR3I8JXsX49eOnD5BV1bS/EcLgIyhD95vHULvHFBCsmE\nh6sgipNuHSRFgCUnEL37pl+1AXXm95cTgBP3GtOUoQlgkqB2Ca10qwo4Xn4Cnex+\nVAy/K26gonhMhJpIjQUwpsRZLnbvys2G6jeCS2XeeDye5raA30lG36ctAoGBALQ6\nf3rXGLm8xAE7VnKQHDGq9doPkilHCsFaKaoZsi+XsfrBcY68B3Jjbca/UR8oLArc\nvk9iD0v/zupeDVpMLvwjuf7MHWFfuubPHJSHRfHycgdT9ygVg7i9TLqEQzJ3eQKE\n+YF13AJ+VpCSKP3ds+xEBGo4s36u6BTZcOYwtKsvAoGBAM6qIEf9T850goM9LpmP\n1JXlM30zCpUIDOyM3vFcEbql9mugnr4ixeSfYj+wA4wY5RYDFIe8Y8Rd646rLxJW\nxzpKecXQ7GFNKqNzrwUgIiiuWxijBjIhLqXOApUXsNVkH/4yfCo6JwJcYOhmzY7E\nwjVRSV43K6lxf6GqQEunidy+\n-----END PRIVATE KEY-----\n",
+  "client_email": "floors@floors-282814.iam.gserviceaccount.com",
+  "client_id": "100583355368601206735",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/floors%40floors-282814.iam.gserviceaccount.com"
+}

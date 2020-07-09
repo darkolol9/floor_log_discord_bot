@@ -85,6 +85,7 @@ def retrieve(path):
 				line += '\t MED/SMALL ' + category[leeches] + '\n'	'''
 
 			log.write(line)
+			line = floor[8:] + " " + " " + bon + " " + time+ " " + mod
 
 			log.close()
 			blank_line = True
