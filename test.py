@@ -32,10 +32,22 @@ async def on_ready():
 
 @client.event
 async def on_message(message):        #default reaction to a msg
-    txt = message.content.strip().upper()        #returns the string
+    txt = message.content.strip().upper() 
+    link = message.content.strip()       #returns the string
     channel = message.channel               #gets current channel
-    if 'DG HUB' in txt:
-        await channel.send('never heard of it...')
+ 
+    if '.png' in link or 'imgur' in link:
+        data = link.split(' ')
+        get_pic(data[0])
+        result = data[1].lower() + " " + winterfacev5cl.retrieve('test.png')
+        row = result.split()
+        sheet = client_.open('FLOORS').sheet1
+        print('adding row to sheet')
+        sheet.append_row(row,value_input_option='USER_ENTERED')
+        print('after adding row...')
+        
+        await channel.send("``` " +result+"```")
+
     await client.process_commands(message)
 
 
@@ -51,6 +63,7 @@ async def inv(ctx):
     print(link)
     msg = "Here is an invite link to our server!: " + str(link)
     await ctx.send(msg)
+
 
 @client.command()
 async def calc(ctx):
