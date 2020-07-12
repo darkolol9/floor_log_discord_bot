@@ -41,12 +41,12 @@ async def on_message(message):        #default reaction to a msg
         get_pic(data[0])
         result = None
 
-        print(winterfacev5cl.retrieve('test.png'))
-        if winterfacev5cl.retrieve('test.png') is None:
+        '''
+        if winterfacev5cl.get_data(25,200,'test.png') is None:
             await channel.send("``` BAD image!, must be original sized screenshot!```")
-            
+         '''  
         try:
-            result = data[1].lower() + " " + winterfacev5cl.retrieve('test.png') + ' ' + data[2]
+            result = data[1].lower() + " " + winterfacev5cl.get_data(25,200,'test.png') + ' ' + data[2]
             print(result)
         except IndexError:
             await channel.send("``` BAD SYNTAX!, E.G : [LINK] [RSN] [CATEGORY] [1:1 (optional)]```")
