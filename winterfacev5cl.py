@@ -9,97 +9,124 @@ import winsound
 import OCR
 from plyer import notification
 
-def retrieve(path,multiscale=False):
+
+def get_data(s,e,path):
+	found = False
+	for i in np.arange(25, 150, 25).tolist():
+		print(f'using scale: {i}% original size...')
+		res = retrieve(path,scale=i)
+		print(res)
+		if res:
+			break
+
+	return res
+
+
+
+def retrieve(path,scale=1):
 	large_flag =  False
 	leeches = 0
-	'''
-	screen = ImageGrab.grab() #screenshot
-	screen_np = np.array(screen) #translate it to a format cv2 understands
 
-	screen_np = cv2.cvtColor(screen_np, cv2.COLOR_RGB2GRAY)'''
 
 	screen_np = cv2.imread(path,0)
-	#screen_np = cv2.cvtColor(screen_np,cv2.COLOR_RGB2BGR)
-	#screen_np = cv2.cvtColor(screen_np, cv2.COLOR_RGB2GRAY)
-	print('red imagae file...')
-
-	res = cv2.matchTemplate(screen_np,tmpl,cv2.TM_CCORR_NORMED) 
-	res2 = cv2.matchTemplate(screen_np,large,cv2.TM_CCORR_NORMED)
-	
-	loc = np.where(res >= threshold)
-
-	#run the image detection on screenshot
-	min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res) 
-	min_val1, max_val1, min_loc1, max_loc1 = cv2.minMaxLoc(res2) #get the location and accuracy val
-	
-	print(f"detection rate: {max_val}")
-	if   max_val > 0.8 :
-		print('detected winterface!  \n')
-		#print('with threshold of: ',max_val)
-		#cv2.imwrite('resources/scrnshotforcompare.png',screen_np)
-
-		for pt in zip(*loc[::-1]):
-			leeches = leeches + 1
-
-		if max_val1 >= 0.99:
-			large_flag = True
-			#print('large floor')
-
-		#optional in testing:	
-		#now we need to crop the parts we need and run text detection
-
-		floor_num = screen_np[max_loc[1]+56:max_loc[1]+78,max_loc[0]+41:max_loc[0]+94]
-		bon_num = screen_np[max_loc[1]+136:max_loc[1]+164,max_loc[0]+297:max_loc[0]+332]
-		time_num = screen_np[max_loc[1]+300:max_loc[1]+321,max_loc[0]+34:max_loc[0]+82]
-		mod_num = screen_np[max_loc[1]+157:max_loc[1]+182,max_loc[0]+297:max_loc[0]+331]
-
-		image_np = np.array(floor_num)
-		image_np2 = np.array(bon_num)
-		image_np3 = np.array(time_num)
-		image_np4 = np.array(mod_num)
-
-
-		floor = OCR.apply_ocr(bitmaps,image_np)
-		bon =  OCR.apply_ocr(bitmaps,image_np2)
-		time = OCR.apply_ocr(bitmaps,image_np3)
-		mod = OCR.apply_ocr(bitmaps,image_np4)
+	width = int(screen_np.shape[1] * scale / 100)
+	height = int(screen_np.shape[0] * scale / 100)
+	dim = (width, height)
+	# resize image
+	screen_np = cv2.resize(screen_np, dim, interpolation = cv2.INTER_LINEAR)
 		
-		winterface = [floor,bon,time,mod]
+				
+	print('red imagae file...')
+	res = None
+	res2 = None
+	try:
+		res = cv2.matchTemplate(screen_np,tmpl,cv2.TM_CCORR_NORMED) 
+		res2 = cv2.matchTemplate(screen_np,large,cv2.TM_CCORR_NORMED)
 	
-		if bon :
-			line =  '[' + winterface[0] + '] ' + '[ bon : ' +  winterface[1]+ '] ' + '[ time : ' + winterface[2] + '] ' +'[ mod : ' + winterface[3]+ ']'
-		blank_line = True
 
-		if "Floor" in floor:
-			blank_line = False
-			print('successfully captured a floor winterface!')
+		loc = np.where(res >= threshold)
+
+		#run the image detection on screenshot
+		min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res) 
+		min_val1, max_val1, min_loc1, max_loc1 = cv2.minMaxLoc(res2) #get the location and accuracy val
+		
+		print(f"detection rate: {max_val}")
+		if max_val < 0.8:
+			return None
+
+		if   max_val > 0.8 :
+			print('detected winterface!  \n')
+			#print('with threshold of: ',max_val)
+			#cv2.imwrite('resources/scrnshotforcompare.png',screen_np)
+
+			for pt in zip(*loc[::-1]):
+				leeches = leeches + 1
+
+			if max_val1 >= 0.99:
+				large_flag = True
+				#print('large floor')
+
+			#optional in testing:	
+			#now we need to crop the parts we need and run text detection
+
+			floor_num = screen_np[max_loc[1]+56:max_loc[1]+78,max_loc[0]+41:max_loc[0]+94]
+			bon_num = screen_np[max_loc[1]+136:max_loc[1]+164,max_loc[0]+297:max_loc[0]+332]
+			time_num = screen_np[max_loc[1]+300:max_loc[1]+321,max_loc[0]+34:max_loc[0]+82]
+			mod_num = screen_np[max_loc[1]+157:max_loc[1]+182,max_loc[0]+297:max_loc[0]+331]
+
+			'''debug'''
+			'''end of debug'''
+			image_np = np.array(floor_num)
+			image_np2 = np.array(bon_num)
+			image_np3 = np.array(time_num)
+			image_np4 = np.array(mod_num)
+
+
+			floor = OCR.apply_ocr(bitmaps,image_np)
+			print(floor)
+			bon =  OCR.apply_ocr(bitmaps,image_np2)
+			time = OCR.apply_ocr(bitmaps,image_np3)
+			mod = OCR.apply_ocr(bitmaps,image_np4)
+			
+			winterface = [floor,bon,time,mod]
 			print(winterface)
-
-		if blank_line == False:
-			winsound.Beep(2500,1500)
-			log = open("log.txt",'a+')
-
-			if large_flag:
-				line += '\t LARGE ' + category[leeches] + '\n'
-			else :
-				line += '\t MED/SMALL ' + category[leeches] + '\n'	
-
-			log.write(line)
-			if large_flag:
-				line = floor[8:] + " " + " " + bon + " " + time+ " " + mod + " LARGE"
-			else :
-				line = floor[8:] + " " + " " + bon + " " + time+ " " + mod + " MED/SMALL"
-
-			log.close()
+		
+			if bon :
+				line =  '[' + winterface[0] + '] ' + '[ bon : ' +  winterface[1]+ '] ' + '[ time : ' + winterface[2] + '] ' +'[ mod : ' + winterface[3]+ ']'
 			blank_line = True
-			notification.notify(
-			title='Winterface found!',
-			message='logged floor...',
-			app_name='Winterface',
-			)
 
-			time_ = time.split(':')
-			return line
+			if "Floor" in floor:
+				blank_line = False
+				print('successfully captured a floor winterface!')
+				print(winterface)
+
+			if blank_line == False:
+				winsound.Beep(2500,1500)
+				log = open("log.txt",'a+')
+
+				if large_flag:
+					line += '\t LARGE ' + category[leeches] + '\n'
+				else :
+					line += '\t MED/SMALL ' + category[leeches] + '\n'	
+
+				log.write(line)
+				if large_flag:
+					line = floor[8:] + " " + " " + bon + " " + time+ " " + mod + " LARGE"
+				else :
+					line = floor[8:] + " " + " " + bon + " " + time+ " " + mod + " MED/SMALL"
+
+				log.close()
+				blank_line = True
+				notification.notify(
+				title='Winterface found!',
+				message='logged floor...',
+				app_name='Winterface',
+				)
+
+				time_ = time.split(':')
+				return line
+	except:
+		print('failed...')
 
 			
 			
