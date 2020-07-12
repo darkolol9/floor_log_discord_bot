@@ -9,7 +9,7 @@ import winsound
 import OCR
 from plyer import notification
 
-def retrieve(path):
+def retrieve(path,multiscale=False):
 	large_flag =  False
 	leeches = 0
 	'''
@@ -79,13 +79,16 @@ def retrieve(path):
 			winsound.Beep(2500,1500)
 			log = open("log.txt",'a+')
 
-			'''if large_flag:
+			if large_flag:
 				line += '\t LARGE ' + category[leeches] + '\n'
 			else :
-				line += '\t MED/SMALL ' + category[leeches] + '\n'	'''
+				line += '\t MED/SMALL ' + category[leeches] + '\n'	
 
 			log.write(line)
-			line = floor[8:] + " " + " " + bon + " " + time+ " " + mod
+			if large_flag:
+				line = floor[8:] + " " + " " + bon + " " + time+ " " + mod + " LARGE"
+			else :
+				line = floor[8:] + " " + " " + bon + " " + time+ " " + mod + " MED/SMALL"
 
 			log.close()
 			blank_line = True

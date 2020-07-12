@@ -23,7 +23,7 @@ def get_pic(image_url):
 client = commands.Bot(command_prefix = '^')
 
 
-
+categories = ['1s','2s','3s','4s','5s']
 
 
 @client.event
@@ -39,14 +39,40 @@ async def on_message(message):        #default reaction to a msg
     if '.png' in link or 'imgur' in link:
         data = link.split(' ')
         get_pic(data[0])
-        result = data[1].lower() + " " + winterfacev5cl.retrieve('test.png')
-        row = result.split()
-        sheet = client_.open('FLOORS').sheet1
-        print('adding row to sheet')
-        sheet.append_row(row,value_input_option='USER_ENTERED')
-        print('after adding row...')
+        result = None
+
+        print(winterfacev5cl.retrieve('test.png'))
+        if winterfacev5cl.retrieve('test.png') is None:
+            await channel.send("``` BAD image!, must be original sized screenshot!```")
+            
+        try:
+            result = data[1].lower() + " " + winterfacev5cl.retrieve('test.png') + ' ' + data[2]
+            print(result)
+        except IndexError:
+            await channel.send("``` BAD SYNTAX!, E.G : [LINK] [RSN] [CATEGORY] [1:1 (optional)]```")
         
-        await channel.send("``` " +result+"```")
+
+        if data[2] in categories:
+            if '1:1' in data:
+                row = result.split()
+                row.append('1:1')
+                sheet = client_.open('FLOORS').sheet1
+                print('adding row to sheet')
+                sheet.append_row(row,value_input_option='USER_ENTERED')
+                print('after adding row...')
+                result += ' 1:1'
+            else:
+                row = result.split()
+                row.append('5:5')
+                sheet = client_.open('FLOORS').sheet1
+                print('adding row to sheet')
+                sheet.append_row(row,value_input_option='USER_ENTERED')
+                print('after adding row...')
+
+            
+            await channel.send("``` " +result+"```")
+        else :
+            await channel.send('invalid input, correct format is ```[LINK] [RSN] [1S/2S/3S...]```')
 
     await client.process_commands(message)
 
@@ -62,6 +88,14 @@ async def inv(ctx):
     link = await ctx.channel.create_invite(max_age = 300)
     print(link)
     msg = "Here is an invite link to our server!: " + str(link)
+    await ctx.send(msg)
+
+@client.command()
+async def link(ctx):
+    """Create instant link to sheet"""
+    link = 'https://docs.google.com/spreadsheets/d/1hoHTXpwujNqJskp-72_oqkQyRFkuMvOGlfqMd5VxbPo/edit#gid=367218127'
+    print(link)
+    msg = "Here is a link the floors sheet!: " + str(link)
     await ctx.send(msg)
 
 
