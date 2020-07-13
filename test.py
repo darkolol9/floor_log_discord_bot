@@ -3,6 +3,7 @@ import requests
 import discord
 from discord.ext import commands
 import gspread
+from datetime import date
 from oauth2client.service_account import ServiceAccountCredentials
 
 
@@ -49,6 +50,8 @@ async def on_message(message):        #default reaction to a msg
             await channel.send("``` BAD SYNTAX!, E.G : [LINK] [RSN]```")
         
         row = result.split()
+        row.append(date.today().strftime('%d-%m-%Y-'))
+        row.append(str(data[0]))
         sheet = client_.open('FLOORS').sheet1
         print('adding row to sheet')
         sheet.append_row(row,value_input_option='USER_ENTERED')

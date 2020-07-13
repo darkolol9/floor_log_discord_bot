@@ -15,7 +15,6 @@ def get_data(s,e,path):
 	for i in np.arange(25, 150, 25).tolist():
 		print(f'using scale: {i}% original size...')
 		res = retrieve(path,scale=i)
-		print(res)
 		if res:
 			print('quitting loop')
 			break
@@ -33,7 +32,6 @@ def count_players(screen_np):
 	loc = np.where( res_ >= threshold_)
 	loc2 = np.where( res2_ >= threshold_)
 
-	print(loc,loc2)
 
 	for pt in zip(*loc[::-1]):
 		players += 1
@@ -61,7 +59,7 @@ def retrieve(path,scale=1):
 	screen_np = cv2.resize(screen_np, dim, interpolation = cv2.INTER_LINEAR)
 		
 				
-	print('red imagae file...')
+	print('processing...')
 	res = None
 	res2 = None
 	try:
@@ -151,7 +149,7 @@ def retrieve(path,scale=1):
 				if large_flag:
 					line = floor[8:] + " " + " " + bon + " " + time+ " " + mod + " LARGE" + ' ' + cat_
 				else :
-					line = floor[8:] + " " + " " + bon + " " + time+ " " + mod + " MED/SMALL"
+					line = floor[8:] + " " + " " + bon + " " + time+ " " + mod + " MED/SMALL" + ' ' + cat_
 
 				log.close()
 				blank_line = True
