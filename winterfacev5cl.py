@@ -17,15 +17,40 @@ def get_data(s,e,path):
 		res = retrieve(path,scale=i)
 		print(res)
 		if res:
+			print('quitting loop')
 			break
 
 	return res
+
+def count_players(screen_np):
+	res_ = cv2.matchTemplate(screen_np,player,cv2.TM_CCOEFF_NORMED)
+	res2_ = cv2.matchTemplate(screen_np,leech,cv2.TM_CCOEFF_NORMED)
+
+	threshold_ = 0.7 #originally at 0.9
+	players = 0 
+	leeches = 0
+
+	loc = np.where( res_ >= threshold_)
+	loc2 = np.where( res2_ >= threshold_)
+
+	print(loc,loc2)
+
+	for pt in zip(*loc[::-1]):
+		players += 1
+
+	for i in zip(*loc2[::-1]):
+		leeches += 1
+	
+
+	return (players,leeches)
+
+	    
 
 
 
 def retrieve(path,scale=1):
 	large_flag =  False
-	leeches = 0
+	
 
 
 	screen_np = cv2.imread(path,0)
@@ -59,8 +84,6 @@ def retrieve(path,scale=1):
 			#print('with threshold of: ',max_val)
 			#cv2.imwrite('resources/scrnshotforcompare.png',screen_np)
 
-			for pt in zip(*loc[::-1]):
-				leeches = leeches + 1
 
 			if max_val1 >= 0.99:
 				large_flag = True
@@ -99,33 +122,44 @@ def retrieve(path,scale=1):
 				blank_line = False
 				print('successfully captured a floor winterface!')
 				print(winterface)
+			
+			try:
+				players_and_leechers = (0,0)
+				players_and_leechers = count_players(screen_np)
+				print(players_and_leechers)
+			except Exception as e:
+				print('problem with count_players func',e)
+
 
 			if blank_line == False:
 				winsound.Beep(2500,1500)
 				log = open("log.txt",'a+')
 
 				if large_flag:
-					line += '\t LARGE ' + category[leeches] + '\n'
+					line += '\t LARGE ' + '\n'
 				else :
-					line += '\t MED/SMALL ' + category[leeches] + '\n'	
+					line += '\t MED/SMALL ' + '\n'	
 
 				log.write(line)
+
+				cat = {1: '1s',2:'2s',3:'3s',4:'4s',5:'5s'}
+				cat_ = cat[players_and_leechers[0] - players_and_leechers[1]]
+
+				if players_and_leechers == (1,0):
+					cat_ =  '1:1'
+
 				if large_flag:
-					line = floor[8:] + " " + " " + bon + " " + time+ " " + mod + " LARGE"
+					line = floor[8:] + " " + " " + bon + " " + time+ " " + mod + " LARGE" + ' ' + cat_
 				else :
 					line = floor[8:] + " " + " " + bon + " " + time+ " " + mod + " MED/SMALL"
 
 				log.close()
 				blank_line = True
-				notification.notify(
-				title='Winterface found!',
-				message='logged floor...',
-				app_name='Winterface',
-				)
 
 				time_ = time.split(':')
 				return line
-	except:
+	except Exception as e:
+		print(e)
 		print('failed...')
 
 			
@@ -164,6 +198,8 @@ threshold = 0.9
 
 tmpl = cv2.imread("resources/newtmp.png",0)  #get the template ready as cv2
 large = cv2.imread("resources/large.png",0)
+leech = cv2.imread("resources/leech.png",0)
+player = cv2.imread("resources/player.png",0)
 
 
 category = {1:'4s',2:'trio',3:'duo',4:'solo',0:'1:1'}

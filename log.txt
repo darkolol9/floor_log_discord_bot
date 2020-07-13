@@ -54,3 +54,22 @@
 [Floor - 7] [ bon : +13%] [ time : 00:14:06] [ mod : -17%]	 LARGE 1:1
 [Floor - 18] [ bon : +13%] [ time : 0:22:22] [ mod : -10%]	 LARGE 1:1
 [Floor - 20] [ bon : +13%] [ time : 00:15:13] [ mod : -14%]	 LARGE 1:1
+[Floor - 15] [ bon : +13%] [ time : 0:06:09] [ mod : -11%]	 LARGE 1:1
+[Floor - 15] [ bon : +13%] [ time : 0:06:09] [ mod : -11%]	 LARGE 1:1
+[Floor - 15] [ bon : +13%] [ time : 0:06:09] [ mod : -11%]	 LARGE 1:1
+[Floor - 15] [ bon : +13%] [ time : 0:06:09] [ mod : -11%]	 LARGE 1:1
+[Floor - 15] [ bon : +13%] [ time : 0:06:09] [ mod : -11%]	 LARGE 1:1
+[Floor - 15] [ bon : +13%] [ time : 0:06:09] [ mod : -11%]	 LARGE 1:1
+[Floor - 15] [ bon : +13%] [ time : 0:06:09] [ mod : -11%]	 LARGE 1:1
+[Floor - 15] [ bon : +13%] [ time : 0:06:09] [ mod : -11%]	 LARGE 1:1
+[Floor - 15] [ bon : +13%] [ time : 0:06:09] [ mod : -11%]	 LARGE 1:1
+[Floor - 15] [ bon : +13%] [ time : 0:06:09] [ mod : -11%]	 LARGE 1:1
+[Floor - 15] [ bon : +13%] [ time : 0:06:09] [ mod : -11%]	 LARGE 1:1
+[Floor - 15] [ bon : +13%] [ time : 0:06:09] [ mod : -11%]	 LARGE 
+[Floor - 15] [ bon : +13%] [ time : 0:06:09] [ mod : -11%]	 LARGE 
+[Floor - 15] [ bon : +13%] [ time : 0:06:09] [ mod : -11%]	 LARGE 
+[Floor - 15] [ bon : +13%] [ time : 0:06:09] [ mod : -11%]	 LARGE 
+[Floor - 15] [ bon : +13%] [ time : 0:06:09] [ mod : -11%]	 LARGE 
+[Floor - 15] [ bon : +13%] [ time : 0:06:09] [ mod : -11%]	 LARGE 
+[Floor - 20] [ bon : +13%] [ time : 0:09:52] [ mod : -15%]	 LARGE 
+[Floor - 51] [ bon : +13%] [ time : 00:09:10] [ mod : -9%]	 LARGE 
