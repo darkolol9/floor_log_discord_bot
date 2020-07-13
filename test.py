@@ -41,38 +41,22 @@ async def on_message(message):        #default reaction to a msg
         get_pic(data[0])
         result = None
 
-        '''
-        if winterfacev5cl.get_data(25,200,'test.png') is None:
-            await channel.send("``` BAD image!, must be original sized screenshot!```")
-         '''  
         try:
-            result = data[1].lower() + " " + winterfacev5cl.get_data(25,200,'test.png') + ' ' + data[2]
+            result = data[1].lower() + " " + winterfacev5cl.get_data(25,200,'test.png') + ' '
             print(result)
+
         except IndexError:
-            await channel.send("``` BAD SYNTAX!, E.G : [LINK] [RSN] [CATEGORY] [1:1 (optional)]```")
+            await channel.send("``` BAD SYNTAX!, E.G : [LINK] [RSN]```")
+        
+        row = result.split()
+        sheet = client_.open('FLOORS').sheet1
+        print('adding row to sheet')
+        sheet.append_row(row,value_input_option='USER_ENTERED')
+
+        await channel.send(f'```{result}```')
         
 
-        if data[2] in categories:
-            if '1:1' in data:
-                row = result.split()
-                row.append('1:1')
-                sheet = client_.open('FLOORS').sheet1
-                print('adding row to sheet')
-                sheet.append_row(row,value_input_option='USER_ENTERED')
-                print('after adding row...')
-                result += ' 1:1'
-            else:
-                row = result.split()
-                row.append('5:5')
-                sheet = client_.open('FLOORS').sheet1
-                print('adding row to sheet')
-                sheet.append_row(row,value_input_option='USER_ENTERED')
-                print('after adding row...')
-
-            
-            await channel.send("``` " +result+"```")
-        else :
-            await channel.send('invalid input, correct format is ```[LINK] [RSN] [1S/2S/3S...]```')
+        
 
     await client.process_commands(message)
 

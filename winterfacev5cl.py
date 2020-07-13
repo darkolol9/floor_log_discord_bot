@@ -141,8 +141,15 @@ def retrieve(path,scale=1):
 					line += '\t MED/SMALL ' + '\n'	
 
 				log.write(line)
+
+				cat = {1: '1s',2:'2s',3:'3s',4:'4s',5:'5s'}
+				cat_ = cat[players_and_leechers[0] - players_and_leechers[1]]
+
+				if players_and_leechers == (1,0):
+					cat_ =  '1:1'
+
 				if large_flag:
-					line = floor[8:] + " " + " " + bon + " " + time+ " " + mod + " LARGE" + ' players:' + str(players_and_leechers[0]) + ' leeches:' + str(players_and_leechers[1])
+					line = floor[8:] + " " + " " + bon + " " + time+ " " + mod + " LARGE" + ' ' + cat_
 				else :
 					line = floor[8:] + " " + " " + bon + " " + time+ " " + mod + " MED/SMALL"
 
