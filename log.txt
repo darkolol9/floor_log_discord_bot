@@ -81,3 +81,28 @@
 [Floor - 20] [ bon : +5%] [ time : 0:02:57] [ mod : -10%]	 MED/SMALL 
 [Floor - 20] [ bon : +5%] [ time : 0:02:57] [ mod : -10%]	 MED/SMALL 
 [Floor - 20] [ bon : +5%] [ time : 0:02:57] [ mod : -10%]	 MED/SMALL 
+[Floor - 20] [ bon : +5%] [ time : 0:02:57] [ mod : -10%]	 MED/SMALL 
+[Floor - 20] [ bon : +12%] [ time : 00:04:16] [ mod : -12%]	 LARGE 
+[Floor - 20] [ bon : +12%] [ time : 00:04:16] [ mod : -12%]	 LARGE 
+[Floor - 20] [ bon : +13%] [ time : 00:05:16] [ mod : -13%]	 LARGE 
+[Floor - 41] [ bon : +13%] [ time : 0:08:00] [ mod : -11%]	 LARGE 
+[Floor - 17] [ bon : +13%] [ time : 0:07:23] [ mod : -10%]	 LARGE 
+[Floor - 17] [ bon : +13%] [ time : 0:07:23] [ mod : -10%]	 LARGE 
+[Floor - 30] [ bon : +13%] [ time : 00:11:46] [ mod : -14%]	 LARGE 
+[Floor - 39] [ bon : +13%] [ time : 00:15:10] [ mod : -4%]	 LARGE 
+[Floor - 19] [ bon : +13%] [ time : 00:04:23] [ mod : -15%]	 MED/SMALL 
+[Floor - 5] [ bon : +13%] [ time : 00:12:25] [ mod : -12%]	 LARGE 
+[Floor - 2] [ bon : +13%] [ time : 00:12:29] [ mod : -14%]	 LARGE 
+[Floor - 39] [ bon : +10%] [ time : 00:14:10] [ mod : -12%]	 LARGE 
+[Floor - 32] [ bon : +13%] [ time : 00:14:54] [ mod : -14%]	 LARGE 
+[Floor - 31] [ bon : +13%] [ time : 00:14:24] [ mod : -16%]	 LARGE 
+Aran [Floor - 20] [ bon : +12%] [ time : 00:04:16] [ mod : -12%]	 LARGE 
+Aran [Floor - 20] [ bon : +12%] [ time : 00:04:16] [ mod : -12%]	 LARGE 
+Aran [Floor - 20] [ bon : +12%] [ time : 00:04:16] [ mod : -12%]	 LARGE 
+Aran Floor - 20 +12% 00:04:16 -12% 	 LARGE 
+Aran Floor - 20 +12% 00:04:16 -12% 	 LARGE 
+Aran Floor - 20 +12% 00:04:16 -12% 	 LARGE 
+Aran Floor - 20 +12% 00:04:16 -12% 	 LARGE 
+Aran Floor - 20 +12% 00:04:16 -12% 	 LARGE 
+Argn Floor - 20 +12% 00:04:16 -12% 	 LARGE 
+180 angel233 Floor - 2 +13% 00:12:29 -14% 	 LARGE 

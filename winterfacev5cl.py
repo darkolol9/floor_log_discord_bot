@@ -8,6 +8,7 @@ import numpy as np
 import winsound
 import OCR
 from plyer import notification
+import rsn
 
 
 def get_data(s,e,path):
@@ -94,6 +95,8 @@ def retrieve(path,scale=1):
 			bon_num = screen_np[max_loc[1]+136:max_loc[1]+164,max_loc[0]+297:max_loc[0]+332]
 			time_num = screen_np[max_loc[1]+300:max_loc[1]+321,max_loc[0]+34:max_loc[0]+82]
 			mod_num = screen_np[max_loc[1]+157:max_loc[1]+182,max_loc[0]+297:max_loc[0]+331]
+			name = screen_np[max_loc[1]+40:max_loc[1]+55,max_loc[0]+364:max_loc[0]+486]
+
 
 			'''debug'''
 			'''end of debug'''
@@ -101,19 +104,19 @@ def retrieve(path,scale=1):
 			image_np2 = np.array(bon_num)
 			image_np3 = np.array(time_num)
 			image_np4 = np.array(mod_num)
+			image_np5 = np.array(name)
 
-
+			name_ = rsn.get_rsn(image_np5)
 			floor = OCR.apply_ocr(bitmaps,image_np)
 			print(floor)
 			bon =  OCR.apply_ocr(bitmaps,image_np2)
 			time = OCR.apply_ocr(bitmaps,image_np3)
 			mod = OCR.apply_ocr(bitmaps,image_np4)
 			
-			winterface = [floor,bon,time,mod]
-			print(winterface)
+			winterface = [name_ ,floor,bon,time,mod]
 		
 			if bon :
-				line =  '[' + winterface[0] + '] ' + '[ bon : ' +  winterface[1]+ '] ' + '[ time : ' + winterface[2] + '] ' +'[ mod : ' + winterface[3]+ ']'
+				line =  winterface[0] + ' ' + winterface[1] + ' '  +  winterface[2] + ' ' + winterface[3] + ' '  + winterface[4]+ ' '
 			blank_line = True
 
 			if "Floor" in floor:
@@ -147,9 +150,9 @@ def retrieve(path,scale=1):
 					cat_ =  '1:1'
 
 				if large_flag:
-					line = floor[8:] + " " + " " + bon + " " + time+ " " + mod + " LARGE" + ' ' + cat_
+					line = name_ + ' ' + floor[8:] + " " + " " + bon + " " + time+ " " + mod + " LARGE" + ' ' + cat_
 				else :
-					line = floor[8:] + " " + " " + bon + " " + time+ " " + mod + " MED/SMALL" + ' ' + cat_
+					line = name_ + ' ' + floor[8:] + " " + " " + bon + " " + time+ " " + mod + " MED/SMALL" + ' ' + cat_
 
 				log.close()
 				blank_line = True

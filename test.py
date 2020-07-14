@@ -43,13 +43,14 @@ async def on_message(message):        #default reaction to a msg
         result = None
 
         try:
-            result = data[1].lower() + " " + winterfacev5cl.get_data(25,200,'test.png') + ' '
+            result =  winterfacev5cl.get_data(25,200,'test.png') + ' '
             print(result)
 
         except IndexError:
             await channel.send("``` BAD SYNTAX!, E.G : [LINK] [RSN]```")
         
-        row = result.split()
+        row = result.split(' ')
+        print(row,'this is row print')
         row.append(date.today().strftime('%d-%m-%Y-'))
         row.append(str(data[0]))
         sheet = client_.open('FLOORS').sheet1
