@@ -150,9 +150,9 @@ def retrieve(path,scale=1):
 					cat_ =  '1:1'
 
 				if large_flag:
-					line = name_ + ' ' + floor[8:] + " " + " " + bon + " " + time+ " " + mod + " LARGE" + ' ' + cat_
+					line = name_ + ',' + floor[8:] + "," +  bon + "," + time+ "," + mod + ", LARGE" + ',' + cat_
 				else :
-					line = name_ + ' ' + floor[8:] + " " + " " + bon + " " + time+ " " + mod + " MED/SMALL" + ' ' + cat_
+					line = name_ + ',' + floor[8:] + ","  + bon + "," + time+ "," + mod + ", MED/SMALL" + ',' + cat_
 
 				log.close()
 				blank_line = True
