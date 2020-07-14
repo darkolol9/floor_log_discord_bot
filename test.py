@@ -110,7 +110,7 @@ async def past_20(ctx):
                     result = None
 
                     try:
-                        result =  winterfacev5cl.get_data(25,200,'test.png')
+                        result =  winterfacev5cl.get_data(25,200,'test.png').strip()
                         print(result)
 
                     except :

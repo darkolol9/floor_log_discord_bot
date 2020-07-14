@@ -136,7 +136,7 @@ def retrieve(path,scale=1):
 			winterface = [name_ ,floor,bon,time,mod]
 		
 			if bon :
-				line =  winterface[0] + ' ' + winterface[1] + ' '  +  winterface[2] + ' ' + winterface[3] + ' '  + winterface[4]+ ' '
+				line =  winterface[0] + ' ' + winterface[1] + ' '  +  winterface[2] + ' ' + winterface[3] + ' '  + winterface[4]+ ''
 			blank_line = True
 
 			if "Floor" in floor:
@@ -163,7 +163,7 @@ def retrieve(path,scale=1):
 
 				if players_and_leechers == (1,0):
 					cat_ =  '1:1'
-
+				cat_ = cat_.strip(' ')
 				if large_flag:
 					line = name_ + ',' + floor[8:] + "," +  bon + "," + time+ "," + mod + "," + "LARGE" + ',' + cat_
 				else :
@@ -173,7 +173,9 @@ def retrieve(path,scale=1):
 				blank_line = True
 
 				time_ = time.split(':')
-				return line
+				print(cat_,'this is category')
+				return line.strip(' ')
+				
 	except Exception as e:
 		print(e)
 		print('failed...')
