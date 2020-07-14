@@ -81,3 +81,168 @@
 [Floor - 20] [ bon : +5%] [ time : 0:02:57] [ mod : -10%]	 MED/SMALL 
 [Floor - 20] [ bon : +5%] [ time : 0:02:57] [ mod : -10%]	 MED/SMALL 
 [Floor - 20] [ bon : +5%] [ time : 0:02:57] [ mod : -10%]	 MED/SMALL 
+[Floor - 20] [ bon : +5%] [ time : 0:02:57] [ mod : -10%]	 MED/SMALL 
+[Floor - 20] [ bon : +12%] [ time : 00:04:16] [ mod : -12%]	 LARGE 
+[Floor - 20] [ bon : +12%] [ time : 00:04:16] [ mod : -12%]	 LARGE 
+[Floor - 20] [ bon : +13%] [ time : 00:05:16] [ mod : -13%]	 LARGE 
+[Floor - 41] [ bon : +13%] [ time : 0:08:00] [ mod : -11%]	 LARGE 
+[Floor - 17] [ bon : +13%] [ time : 0:07:23] [ mod : -10%]	 LARGE 
+[Floor - 17] [ bon : +13%] [ time : 0:07:23] [ mod : -10%]	 LARGE 
+[Floor - 30] [ bon : +13%] [ time : 00:11:46] [ mod : -14%]	 LARGE 
+[Floor - 39] [ bon : +13%] [ time : 00:15:10] [ mod : -4%]	 LARGE 
+[Floor - 19] [ bon : +13%] [ time : 00:04:23] [ mod : -15%]	 MED/SMALL 
+[Floor - 5] [ bon : +13%] [ time : 00:12:25] [ mod : -12%]	 LARGE 
+[Floor - 2] [ bon : +13%] [ time : 00:12:29] [ mod : -14%]	 LARGE 
+[Floor - 39] [ bon : +10%] [ time : 00:14:10] [ mod : -12%]	 LARGE 
+[Floor - 32] [ bon : +13%] [ time : 00:14:54] [ mod : -14%]	 LARGE 
+[Floor - 31] [ bon : +13%] [ time : 00:14:24] [ mod : -16%]	 LARGE 
+Aran [Floor - 20] [ bon : +12%] [ time : 00:04:16] [ mod : -12%]	 LARGE 
+Aran [Floor - 20] [ bon : +12%] [ time : 00:04:16] [ mod : -12%]	 LARGE 
+Aran [Floor - 20] [ bon : +12%] [ time : 00:04:16] [ mod : -12%]	 LARGE 
+Aran Floor - 20 +12% 00:04:16 -12% 	 LARGE 
+Aran Floor - 20 +12% 00:04:16 -12% 	 LARGE 
+Aran Floor - 20 +12% 00:04:16 -12% 	 LARGE 
+Aran Floor - 20 +12% 00:04:16 -12% 	 LARGE 
+Aran Floor - 20 +12% 00:04:16 -12% 	 LARGE 
+Argn Floor - 20 +12% 00:04:16 -12% 	 LARGE 
+180 angel233 Floor - 2 +13% 00:12:29 -14% 	 LARGE 
+Hunterdudex Floor - 36 +13% 00:04:53 -12% 	 LARGE 
+squitward114 Floor - 20 +13% 00:03:16 -17% 	 MED/SMALL 
+squitward114 Floor - 20 +13% 00:03:16 -17% 	 MED/SMALL 
+180 angel233 Floor - 2 +13% 00:12:29 -14% 	 LARGE 
+180 angel233 Floor - 2 +13% 00:12:29 -14% 	 LARGE 
+Argn Floor - 9 +13% 0:07:25 -9% 	 LARGE 
+Argn Floor - 8 +13% 0:07:25 -14% 	 LARGE 
+Lf Floor - 7 +13% 00:05:01 -13% 	 LARGE 
+Lf Floor - 4 +13% 0:05:09 -12% 	 LARGE 
+Lf Floor - 3 +13% 00:05:51 -14% 	 LARGE 
+Lf Floor - 9 +11% 0:06:53 -9% 	 LARGE 
+Argn Floor - 20 +12% 00:04:16 -12% 	 LARGE 
+Argn Floor - 20 +12% 00:04:16 -12% 	 LARGE 
+YampireFrown Floor - 15 +13% 00:07:34 -18% 	 LARGE 
+squitward114 Floor - 40 +13% 0:09:06 -16% 	 LARGE 
+Kuda Floor - 42 +5% 00:13:00 -13% 	 LARGE 
+Joelril
+
+jani Floor - 49 +13% 00:17:17 -10% 	 LARGE 
+Joelril
+
+jani Floor - 49 +13% 00:17:17 -10% 	 LARGE 
+Joelril
+
+jani Floor - 41 +13% 00:14:45 -16% 	 LARGE 
+Joelril
+
+jani Floor - 41 +13% 00:16:50 -6% 	 LARGE 
+Joelril
+
+jani Floor - 36 +13% 00:16:49 -14% 	 LARGE 
+Joelril
+
+jani Floor - 9 +13% 00:18:16 -9% 	 LARGE 
+Joelril
+
+jani Floor - 9 +13% 00:15:27 -9% 	 LARGE 
+Joelril
+
+jani Floor - 20 +13% 00:11:25 -11% 	 LARGE 
+Joelril
+
+jani Floor - 20 +12% 00:16:09 -10% 	 LARGE 
+Joelril
+
+jani Floor - 34 +13% 00:12:34 -16% 	 LARGE 
+Joelril
+
+jani Floor - 34 +13% 00:12:34 -16% 	 LARGE 
+Joelril
+
+jani Floor - 34 +13% 00:12:34 -16% 	 LARGE 
+Lf Floor - 9 +11% 0:06:53 -9% 	 LARGE 
+Lf Floor - 9 +11% 0:06:53 -9% 	 LARGE 
+Lf Floor - 3 +13% 00:05:51 -14% 	 LARGE 
+Lf Floor - 4 +13% 0:05:09 -12% 	 LARGE 
+Lf Floor - 7 +13% 00:05:01 -13% 	 LARGE 
+Argn Floor - 8 +13% 0:07:25 -14% 	 LARGE 
+180 angel233 Floor - 2 +13% 00:12:29 -14% 	 LARGE 
+180 angel233 Floor - 5 +13% 00:12:25 -12% 	 LARGE 
+Joelril
+
+jani Floor - 34 +13% 00:12:34 -16% 	 LARGE 
+Joelril
+
+jani Floor - 34 +13% 00:12:34 -16% 	 LARGE 
+YampireFrown Floor - 20 +13% 0:09:36 -16% 	 LARGE 
+yolcan lo jic Floor - 33 +13% 00:13:22 -9% 	 LARGE 
+yolcan lo jic Floor - 13 +13% 00:14:04 -12% 	 LARGE 
+eatmydisck33 Floor - 60 +13% 0:09:36 -7% 	 LARGE 
+Joelril
+
+jani Floor - 20 +13% 00:14:27 -12% 	 LARGE 
+Joelril
+
+jani Floor - 20 +13% 00:14:10 -4% 	 LARGE 
+Joelril
+
+jani Floor - 9 +13% 00:17:11 -12% 	 LARGE 
+Joelril
+
+jani Floor - 9 +13% 00:12:01 -16% 	 LARGE 
+Joelril
+
+jani Floor - 16 +13% 00:11:34 -11% 	 LARGE 
+Joelril
+
+jani Floor - 16 +13% 00:15:31 -14% 	 LARGE 
+Joelril
+
+jani Floor - 16 +13% 00:13:55 -11% 	 LARGE 
+Joelril
+
+jani Floor - 20 +13% 00:14:10 -4% 	 LARGE 
+Joelril
+
+jani Floor - 20 +13% 00:14:10 -4% 	 LARGE 
+Joelril
+
+jani Floor - 20 +13% 00:14:10 -4% 	 LARGE 
+Joelril
+
+jani Floor - 20 +13% 00:14:10 -4% 	 LARGE 
+ Floor - 20 +13% 00:14:10 -4% 	 LARGE 
+ Floor - 20 +13% 00:14:10 -4% 	 LARGE 
+Joelril
+
+jani Floor - 20 +13% 00:14:10 -4% 	 LARGE 
+Joelril
+
+jani Floor - 20 +13% 00:14:10 -4% 	 LARGE 
+Joelribiani = Floor - 20 +13% 00:14:10 -4% 	 LARGE 
+Joelribiani = Floor - 20 +13% 00:14:10 -4% 	 LARGE 
+Joelribiani = Floor - 20 +13% 00:14:10 -4% 	 LARGE 
+Joelribiani = Floor - 11 +13% 00:07:51 -12% 	 LARGE 
+Joelribiani = Floor - 41 +13% 00:09:21 -10% 	 LARGE 
+Joelribiani = Floor - 16 +13% 00:10:01 -13% 	 LARGE 
+Joelribiani = Floor - 51 +13% 00:11:18 -8% 	 LARGE 
+Joelribiani = Floor - 50 +12% 00:09:13 -11% 	 LARGE 
+Joelribiani = Floor - 41 +13% 00:07:24 -13% 	 LARGE 
+Joelribiani = Floor - 35 +13% 0:08:48 -12% 	 LARGE 
+Joelribiani = Floor - 47 +13% 0:07:26 -11% 	 LARGE 
+Joelribiani = Floor - 11 +13% 00:07:51 -12% 	 LARGE 
+Joelribiani = Floor - 41 +13% 0:09:36 -10% 	 LARGE 
+Joelribiani = Floor - 49 +12% 00:11:07 -10% 	 LARGE 
+Joelribiani = Floor - 20 +13% 00:14:10 -4% 	 LARGE 
+Joelribiani = Floor - 20 +13% 00:14:10 -4% 	 LARGE 
+Shawniee — Floor - 58 +13% 0:09:02 +10 	 LARGE 
+Joelribiani Floor - 20 +13% 00:14:10 -4% 	 LARGE 
+JoeTribiani Floor - 20 +13% 00:14:10 -4% 	 LARGE 
+JoeTribiani Floor - 20 +13% 00:14:10 -4% 	 LARGE 
+JoeTribiani Floor - 20 +13% 00:14:10 -4% 	 LARGE 
+JoeTribiani Floor - 20 +13% 00:14:10 -4% 	 LARGE 
+JoeTribiani Floor - 16 +13% 00:11:34 -11% 	 LARGE 
+JoeTribiani Floor - 16 +13% 00:15:31 -14% 	 LARGE 
+JoeTribiani Floor - 16 +13% 00:13:55 -11% 	 LARGE 
+JoeTribiani Floor - 16 +13% 00:16:05 -11% 	 LARGE 
+JoeTribiani Floor - 34 +13% 00:16:57 -11% 	 LARGE 
+JoeTribiani Floor - 34 +13% 00:15:45 -11% 	 LARGE 
+JoeTribiani Floor - 34 +13% 00:16:54 -10% 	 LARGE 
