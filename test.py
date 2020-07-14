@@ -4,6 +4,7 @@ import discord
 from discord.ext import commands
 import gspread
 from datetime import date
+import time
 from oauth2client.service_account import ServiceAccountCredentials
 
 
@@ -37,7 +38,7 @@ async def on_message(message):        #default reaction to a msg
     link = message.content.strip()       #returns the string
     channel = message.channel               #gets current channel
  
-    if '.png' in link or 'imgur' in link:
+    if '.png' in link or '.jpg' in link:
         
         data = link.split('\n')
         for dat in data:
@@ -94,6 +95,41 @@ async def link(ctx):
 async def calc(ctx):
     link = 'https://dg-service.info/calc.html'
     await ctx.send(link)
+
+@client.command()
+async def past_20(ctx):
+    messages = await ctx.channel.history(limit=None).flatten()
+
+    for link in messages:
+        try:
+            if '.png' in link.content or '.jpg' in link.content:
+            
+                data = link.content.split('\n')
+                for dat in data:
+                    get_pic(dat)
+                    result = None
+
+                    try:
+                        result =  winterfacev5cl.get_data(25,200,'test.png')
+                        print(result)
+
+                    except :
+                        pass
+                        
+                    
+                    row = result.split(',')
+                    print(row,'this is row print')
+                    row.append(date.today().strftime('%d-%m-%Y-'))
+                    row.append(str(dat))
+                    sheet = client_.open('FLOORS').sheet1
+                    print('adding row to sheet')
+                    sheet.append_row(row,value_input_option='USER_ENTERED')
+
+                    await ctx.channel.send(f'```{result}```')
+                    time.sleep(1)
+        except:
+            pass
+
 
 @client.command()
 async def whine(ctx):

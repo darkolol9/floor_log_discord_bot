@@ -6,7 +6,7 @@ pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tessera
 def get_rsn(img):
     img = cv2.bitwise_not(img)
     img = cv2.threshold(img, 10, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
-    scale_percent = 300 # percent of original size
+    scale_percent = 200 # percent of original size
     width = int(img.shape[1] * scale_percent / 100)
     height = int(img.shape[0] * scale_percent / 100)
     dim = (width, height)

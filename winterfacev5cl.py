@@ -13,7 +13,7 @@ import rsn
 
 def get_data(s,e,path):
 	found = False
-	for i in np.arange(25, 150, 25).tolist():
+	for i in np.arange(25, 125, 25).tolist():
 		print(f'using scale: {i}% original size...')
 		res = retrieve(path,scale=i)
 		if res:
@@ -99,7 +99,7 @@ def retrieve(path,scale=1):
 
 
 			'''debug'''
-			#cv2.imshow('name',name)
+			#but +1cv2.imshow('name',name)
 			#cv2.waitKey(0)
 			'''end of debug'''
 			image_np = np.array(floor_num)
@@ -110,10 +110,28 @@ def retrieve(path,scale=1):
 
 			name_ = rsn.get_rsn(image_np5)
 			floor = OCR.apply_ocr(bitmaps,image_np)
+			if floor == None:
+				floor = rsn.get_rsn(image_np)
+
 			print(floor)
 			bon =  OCR.apply_ocr(bitmaps,image_np2)
+
+			if bon == None:
+				bon = rsn.get_rsn(image_np2)
+
 			time = OCR.apply_ocr(bitmaps,image_np3)
+			if time == None:
+				time = rsn.get_rsn(image_np3)
+
 			mod = OCR.apply_ocr(bitmaps,image_np4)
+			if mod == None:
+				mod = rsn.get_rsn(image_np4)
+
+			print(mod)
+			
+			if '%' not in mod:
+				print(mod)
+				mod += '%'
 			
 			winterface = [name_ ,floor,bon,time,mod]
 		
@@ -136,12 +154,7 @@ def retrieve(path,scale=1):
 
 			if blank_line == False:
 				winsound.Beep(2500,1500)
-				log = open("log.txt",'a+')
-
-				if large_flag:
-					line += '\t LARGE ' + '\n'
-				else :
-					line += '\t MED/SMALL ' + '\n'	
+				log = open("log.txt",'a+')	
 
 				log.write(line)
 
@@ -152,9 +165,9 @@ def retrieve(path,scale=1):
 					cat_ =  '1:1'
 
 				if large_flag:
-					line = name_ + ',' + floor[8:] + "," +  bon + "," + time+ "," + mod + ", LARGE" + ',' + cat_
+					line = name_ + ',' + floor[8:] + "," +  bon + "," + time+ "," + mod + "," + "LARGE" + ',' + cat_
 				else :
-					line = name_ + ',' + floor[8:] + ","  + bon + "," + time+ "," + mod + ", MED/SMALL" + ',' + cat_
+					line = name_ + ',' + floor[8:] + ","  + bon + "," + time+ "," + mod + "," + "MED/SMALL" + ',' + cat_
 
 				log.close()
 				blank_line = True
