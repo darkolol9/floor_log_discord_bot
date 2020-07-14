@@ -38,25 +38,29 @@ async def on_message(message):        #default reaction to a msg
     channel = message.channel               #gets current channel
  
     if '.png' in link or 'imgur' in link:
-        data = link.split(' ')
-        get_pic(data[0])
-        result = None
-
-        try:
-            result = data[1].lower() + " " + winterfacev5cl.get_data(25,200,'test.png') + ' '
-            print(result)
-
-        except IndexError:
-            await channel.send("``` BAD SYNTAX!, E.G : [LINK] [RSN]```")
         
-        row = result.split()
-        row.append(date.today().strftime('%d-%m-%Y-'))
-        row.append(str(data[0]))
-        sheet = client_.open('FLOORS').sheet1
-        print('adding row to sheet')
-        sheet.append_row(row,value_input_option='USER_ENTERED')
+        data = link.split('\n')
+        for dat in data:
+            get_pic(dat)
+            result = None
 
-        await channel.send(f'```{result}```')
+            try:
+                result =  winterfacev5cl.get_data(25,200,'test.png') + ' '
+                print(result)
+
+            except :
+                continue
+                
+            
+            row = result.split(',')
+            print(row,'this is row print')
+            row.append(date.today().strftime('%d-%m-%Y-'))
+            row.append(str(dat))
+            sheet = client_.open('FLOORS').sheet1
+            print('adding row to sheet')
+            sheet.append_row(row,value_input_option='USER_ENTERED')
+
+            await channel.send(f'```{result}```')
         
 
         
@@ -113,14 +117,19 @@ async def satvik(ctx):
     await ctx.send('did nothing wrong...as far as i can tell.')
 
 @client.command()
-async def log(ctx,arg1,arg2):
-    get_pic(arg1)
-    result = arg2 + " " + winterfacev5cl.retrieve('test.png')
-    row = result.split()
+async def log(ctx,**kwargs):
+    get_pic(kwargs[0])
+    result =  winterfacev5cl.retrieve('test.png')
+    row = result.split(',')
     sheet = client_.open('FLOORS').sheet1
     print('adding row to sheet')
     sheet.append_row(row)
     print('after adding row...')
+    for ply in kwargs[1:]:
+        row[0] = str(ply)
+        sheet.append_row(row)
+        print('added',ply)
+
     
     await ctx.send(result)
 
