@@ -95,7 +95,7 @@ def retrieve(path,scale=1):
 			bon_num = screen_np[max_loc[1]+136:max_loc[1]+164,max_loc[0]+297:max_loc[0]+332]
 			time_num = screen_np[max_loc[1]+300:max_loc[1]+321,max_loc[0]+34:max_loc[0]+82]
 			mod_num = screen_np[max_loc[1]+157:max_loc[1]+182,max_loc[0]+297:max_loc[0]+331]
-			name = screen_np[max_loc[1]+40:max_loc[1]+55,max_loc[0]+364:max_loc[0]+486]
+			name = screen_np[max_loc[1]+37:max_loc[1]+55,max_loc[0]+364:max_loc[0]+486]
 
 
 			'''debug'''
