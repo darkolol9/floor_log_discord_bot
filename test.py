@@ -36,13 +36,30 @@ async def on_ready():
 async def on_message(message):        #default reaction to a msg
     txt = message.content.strip().upper() 
     link = message.content.strip()       #returns the string
-    channel = message.channel               #gets current channel
+    channel = message.channel 
+    attach = None
+    try:   
+        attach = message.attachments[0].url
+    except:
+        print('no attatchment')           #gets current channel
  
-    if '.png' in link or '.jpg' in link:
+    if '.png' in link or '.jpg' in link or attach:
         
-        data = link.split('\n')
+        data = [link]
+        data.append(attach)
+        print(link,"this was found as a string, of the msg")
+        
+        if attach:
+            print(attach,'this was found in attachments')
+            data.remove(link)
+
         for dat in data:
-            get_pic(dat)
+            try:
+                get_pic(dat)
+                
+            except Exception as e:
+                pass
+
             result = None
 
             try:
@@ -97,15 +114,27 @@ async def calc(ctx):
     await ctx.send(link)
 
 @client.command()
-async def past_20(ctx):
-    messages = await ctx.channel.history(limit=None).flatten()
+async def past_20(ctx,arg):
+    messages = await ctx.channel.history(limit=int(arg)).flatten()
 
     for link in messages:
+        print(link.content)
+
+        attach = None
+
         try:
-            if '.png' in link.content or '.jpg' in link.content:
+            attach = link.attachments[0].url
+
+
+            if '.png' in link.content or '.jpg' in link.content or '.png' in attach or '.jpg' in attach:
             
-                data = link.content.split('\n')
+                data = [link.content]
+
+                if attach != None:
+                    data = [attach]
+                    
                 for dat in data:
+                    
                     get_pic(dat)
                     result = None
 
@@ -114,6 +143,7 @@ async def past_20(ctx):
                         print(result)
 
                     except :
+                        print('winterfacecl failed to get any data from link')
                         pass
                         
                     

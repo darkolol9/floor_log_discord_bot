@@ -177,7 +177,7 @@ def retrieve(path,scale=1):
 				return line.strip(' ')
 				
 	except Exception as e:
-		print(e)
+		
 		print('failed...')
 
 			
