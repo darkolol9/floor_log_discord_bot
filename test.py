@@ -38,6 +38,7 @@ async def on_message(message):        #default reaction to a msg
     link = message.content.strip()       #returns the string
     channel = message.channel 
     attach = None
+    
     try:   
         attach = message.attachments[0].url
     except:
@@ -46,12 +47,10 @@ async def on_message(message):        #default reaction to a msg
     if '.png' in link or '.jpg' in link or attach:
         
         data = [link]
-        data.append(attach)
-        print(link,"this was found as a string, of the msg")
         
         if attach:
             print(attach,'this was found in attachments')
-            data.remove(link)
+            data = [attach]
 
         for dat in data:
             try:
@@ -77,9 +76,10 @@ async def on_message(message):        #default reaction to a msg
             sheet = client_.open('FLOORS').sheet1
             print('adding row to sheet')
             sheet.append_row(row,value_input_option='USER_ENTERED')
+             
 
             await channel.send(f'```{result}```')
-        
+            continue
 
         
 
@@ -124,29 +124,31 @@ async def past_20(ctx,arg):
 
         try:
             attach = link.attachments[0].url
+        except:
+            print('no attachment, trying links')
 
-
-            if '.png' in link.content or '.jpg' in link.content or '.png' in attach or '.jpg' in attach:
+        if '.png' in link.content or '.jpg' in link.content or attach:
             
-                data = [link.content]
+            data = [link.content]
 
-                if attach != None:
-                    data = [attach]
+            if attach:
+                data = [attach]
                     
-                for dat in data:
+            print('this is data[]: ',data)
+            for dat in data:
                     
-                    get_pic(dat)
-                    result = None
+                get_pic(dat)
+                result = None
 
-                    try:
-                        result =  winterfacev5cl.get_data(25,200,'test.png').strip()
-                        print(result)
+                try:
+                    result =  winterfacev5cl.get_data(25,200,'test.png').strip()
+                    print(result)
 
-                    except :
-                        print('winterfacecl failed to get any data from link')
-                        pass
+                except :
+                    print('winterfacecl failed to get any data from link')
+                    pass
                         
-                    
+                if result:    
                     row = result.split(',')
                     print(row,'this is row print')
                     row.append(date.today().strftime('%d-%m-%Y-'))
@@ -156,9 +158,8 @@ async def past_20(ctx,arg):
                     sheet.append_row(row,value_input_option='USER_ENTERED')
 
                     await ctx.channel.send(f'```{result}```')
-                    time.sleep(1)
-        except:
-            pass
+                
+        
 
 
 @client.command()
